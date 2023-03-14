@@ -6,4 +6,6 @@
 
 * [한국어: 단어, 문장 등](./korean.md)
 * [영어: 단어, 문장 등](./english.md)
+* [개발 관련](./dev.md)
+* [MacOS](./macos.md)
 
