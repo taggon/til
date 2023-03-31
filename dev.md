@@ -27,3 +27,7 @@ Overview 항목 건너뛰고 바로 API 사용법 문서만 봤더니 저 내용
 그러다 얼마 전 SQLite을 개발한 Richard Hipp이 Google Tech Talk에서 [강연하는 영상](https://youtu.be/giAMt8Tj-84?t=71)을 봤는데 "에스큐엘라이트"라고 발음했다.
 오늘부터는 나도 그렇게 발음해야겠다.
 
+## npm link
+
+로컬에서 여러 노드 프로젝트를 개발할 때 `npm link`를 사용하면 로컬 변경사항이 바로 반영되서 편리하다.
+
