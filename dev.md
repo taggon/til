@@ -46,3 +46,7 @@ Overview 항목 건너뛰고 바로 API 사용법 문서만 봤더니 저 내용
 예상하지 못했던 장점 중 하나는 필드에 `description`을 추가할 수 있어서 필드 이름 위에 마우스 커서를 올리면 설명을 보여준다는 거다.
 
 ![필드 설명 툴팁](./assets/json_field_description.png)
+
+## GitHub Raw File
+
+GitHub 개인용 토큰(personal access token, Token)을 `Accept: Bearer <token>` 헤더에 넣어서 요청하면 raw 파일을 다운로드할 수 있다. 공통 스크립트 파일을 배포할 때 사용함.
