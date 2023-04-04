@@ -50,3 +50,7 @@ Overview 항목 건너뛰고 바로 API 사용법 문서만 봤더니 저 내용
 ## GitHub Raw File
 
 GitHub 개인용 토큰(personal access token, Token)을 `Accept: Bearer <token>` 헤더에 넣어서 요청하면 raw 파일을 다운로드할 수 있다. 공통 스크립트 파일을 배포할 때 사용함.
+
+## Git 커밋 날짜
+
+Git 커밋을 할 때 `--date` 설정을 사용하면 날짜를 현재 시각이 아닌 다른 날짜로 바꿀 수 있다. 예를 들어 `git commit --date="1 day ago"`로 하면 하루 전 날짜로 커밋을 할 수 있다. Git을 그렇게 오랜 시간 사용하면서 처음 알았네.
