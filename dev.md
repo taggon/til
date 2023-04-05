@@ -54,3 +54,20 @@ GitHub 개인용 토큰(personal access token, Token)을 `Accept: Bearer <token>
 ## Git 커밋 날짜
 
 Git 커밋을 할 때 `--date` 설정을 사용하면 날짜를 현재 시각이 아닌 다른 날짜로 바꿀 수 있다. 예를 들어 `git commit --date="1 day ago"`로 하면 하루 전 날짜로 커밋을 할 수 있다. Git을 그렇게 오랜 시간 사용하면서 처음 알았네.
+
+## Vite 빌드 오류
+
+Vite로 Node.js CLI 애플리케이션을 만드는데 자꾸 `Error: 'constants' is not exported by "__vite-browser-external"` 이런 비슷한 형식의 오류가 발생한다.
+오류가 발생한 부분의 코드는 다음과 같았다.
+
+```
+import { constants } from 'node:fs/promises';
+```
+
+에러의 원인은 Vite는 브라우저 환경에서 동작하는 것이 기본값이라 `node:`로 시작하는 Node 빌트인 패키지도 어떻게든 번들하려다가 발생하는 문제였다.
+번들된 파일을 열어보면 결국 `node:fs/promises`는 빈 객체(`{}`)로 대체되고 따라서 `constants`는 `undefined`가 되어버린다.
+
+의외로 해결책은 간단하다.
+
+Vite로 하여금 노드 환경에서도 사용될 수 있다고 알려주면 되는 건데, 조금 엉뚱하지만 `build.ssr` 옵션을 `true`로 설정하면 된다. 그러면 문제 끝.
+
