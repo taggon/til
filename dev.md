@@ -71,3 +71,13 @@ import { constants } from 'node:fs/promises';
 
 Vite로 하여금 노드 환경에서도 사용될 수 있다고 알려주면 되는 건데, 조금 엉뚱하지만 `build.ssr` 옵션을 `true`로 설정하면 된다. 그러면 문제 끝.
 
+## JSON.stringify의 키 정렬
+
+JSON을 문자열로 만들 때 키의 알파벳 순서로 정렬되기를 원해서 JSON에 건네주는 객체를 정렬된 키로 새로 만들어도 봤는데 잘 되지 않았다.
+해결 방법은 `JSON.stringify`의 두 번째 인수로 정렬된 키의 배열을 전달하면 된다.
+원래는 "허용된 키를 입력하는" 인수지만 정렬 용도로도 사용할 수 있었다.
+
+```js
+JSON.stringify(obj, Object.keys(obj).sort());
+```
+
