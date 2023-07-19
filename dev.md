@@ -81,3 +81,9 @@ JSON을 문자열로 만들 때 키의 알파벳 순서로 정렬되기를 원�
 JSON.stringify(obj, Object.keys(obj).sort());
 ```
 
+## IE 11
+
+IE 11에서 많은 비표준 API가 제거되었다. [공식 발표](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/bg182625(v=vs.85)?redirectedfrom=MSDN)에 따르면
+`script.readyState`, `script.onreadystatechange`, `attachEvent/detachEvent`, `document.all` 등이 제거되었다고 나온다.
+재밌는 점은 사실 `document.all`은 IE는 물론이고 크롬, 파이어폭스, 사파리에서 2023년 7월 19일 현재도 지원된다.
+
